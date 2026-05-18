@@ -1,39 +1,34 @@
-# BuyOpsAudit
+# 🚀 BuyOpsAudit
 
-An automated, end-to-end audit and data reconciliation engine built for the Merchandising and Buying Operations teams. 
+> **Automated End-to-End Audit & Data Reconciliation Engine** Built Exclusively for Merchandising & Buying Operations Teams.
 
-## Overview
-`BuyOpsAudit` is a Python-based data verification pipeline designed to eliminate manual compliance checks. The tool bridges operational workflows in **Freshservice** and financial/transactional records in **Snowflake**, executing 50+ rigorous validation checkpoints (matching items, dates, amounts, and metadata) to ensure absolute data integrity.
+---
 
-## Key Features
-* **Freshservice ETL Pipeline:** Connects via REST API to systematically download targeted tickets, extract core metrics, isolate attachments, and clean the data into structured Pandas DataFrames.
-* **Snowflake Data Warehousing:** Query and pull vendor and product purchase records matching the active ticket backlog.
-* **50+ Check Audit Engine:** Executes a massive suite of automated validation tests across matching item IDs, transaction timelines, financial amounts, and contract specifics.
-* **Comprehensive Multi-Sheet Reporting:** 
-  * Generates a primary **Summary Sheet** featuring high-level compliance metrics and an overall data health score.
-  * Exports **5 Raw Data Sheets** containing granular breakdown records.
-  * Outputs a specialized **Exception Report** detailing specific formatting and document failures for attachments that failed validation.
+## 📋 Overview
+`BuyOpsAudit` is an enterprise-grade Python data verification pipeline engineered to eliminate manual compliance overhead. The system serves as an automated, high-speed bridge between operational ticketing workflows in **Freshservice** and financial/transactional truth records in **Snowflake**. 
 
-## Architecture & Data Flow
-1. **Ingest:** Extract ticket payload and files from Freshservice API.
-2. **Transform:** Clean, parse, and normalize data payloads into DataFrames.
-3. **Fetch:** Retrieve source-of-truth transactional data from Snowflake.
-4. **Reconcile:** Run the 50-point matrix audit engine.
-5. **Output:** Generate detailed Excel workbooks for the end-user.
+By executing an exhaustive **50+ matrix validation checkpoint suite**, it programmatically cross-checks items, timelines, amounts, and attachment metadata to guarantee absolute data integrity.
 
-## Tech Stack
-* **Language:** Python 3.x
-* **Data Libraries:** Pandas, NumPy
-* **Integrations:** Freshservice REST API, Snowflake Connector for Python
-* **Reporting:** OpenPyXL / XlsxWriter
+---
 
-## Getting Started
+## ✨ Key Features
 
-### Prerequisites
-Ensure you have a `.env` file in the root directory containing your secure credentials (never commit this file to GitHub):
-```env
-FRESHSERVICE_API_KEY=your_key_here
-FRESHSERVICE_DOMAIN=your_domain.freshservice.com
-SNOWFLAKE_USER=your_user
-SNOWFLAKE_PASSWORD=your_password
-SNOWFLAKE_ACCOUNT=your_account
+* 📥 **Freshservice ETL Pipeline:** Seamlessly connects via REST API to download targeted backlogs, extract core metadata, isolate multi-format attachments, and normalize data streams into high-performance Pandas DataFrames.
+* ❄️ **Snowflake Data Infrastructure:** Runs dynamic relational query wrappers to automatically fetch corresponding live vendor, product, and purchase records matching the in-flight ticket backlog.
+* 🛡️ **50+ Check Deep Audit Engine:** Operates a massive validation matrix testing against item IDs, complex transaction timelines, financial amounts, and distinct contract parameters.
+* 📊 **Executive Multi-Sheet Reporting:** * 👑 **Summary Scorecard:** A color-coded dashboard outlining critical compliance tracking metrics and an overall operational data health score.
+  * 🗄️ **5 Raw Data Sheets:** Granular, deep-dive data dumps partitioned for advanced troubleshooting.
+  * ⚠️ **Exception Tracking Log:** A dedicated fallout report mapping out exact document layout and structural formatting failures within failed attachments.
+
+---
+
+## 📐 Architecture & Data Flow
+
+```text
+  [Freshservice API] ──► Ingestion Module ──► Dynamic Schema Mapping (COL_MAP)
+                                                   │
+  [Snowflake DW]     ──► DB Query Engine  ──► Pandas & DuckDB Core Analytics
+                                                   │
+  [Automated Audit]  ◄── Multi-Layer Matrix Matrix Verification (50+ Rules)
+         │
+         └───► Excel Engine (Summary Scorecard, Exception Log, 5 Raw Data Dumps)
