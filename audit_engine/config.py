@@ -6,7 +6,7 @@ import requests
 # --- API & AUTH ---
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 FRESHSERVICE_DOMAIN = "saks.freshservice.com"
-API_KEY = "2CswHwYqSEW_9S3tvDCF"
+API_KEY = "Fresh Service API Key"
 fresh_headers = {"Content-Type": "application/json"}
 BASE_URL = f"https://{FRESHSERVICE_DOMAIN}/api/v2"
 auth = HTTPBasicAuth(API_KEY, "X")
@@ -15,9 +15,9 @@ API_CALL_LIMIT = 120
 worksheet_anchor = 70000
 
 # --- PATHS ---
-down_path = r'C:\Users\MBathija\BI_Engineering\FreshAuditv2\Down_Folder'
-attachment_path = r"C:\Users\MBathija\BI_Engineering\FreshAuditv2\Fixed_attachments"
-sql_path = r"C:\Users\MBathija\BI_Engineering\FreshAuditv2\SQL_Files"
+down_path = r'Down_Folder'
+attachment_path = r"Fixed_attachments"
+sql_path = r"SQL_Files"
 
 # --- DATA MAPPING & VALIDATION ---
 COL_MAP = {
